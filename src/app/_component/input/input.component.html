@@ -1,0 +1,6 @@
+<form class="input">
+<label [for]="name">{{labelValue}}:</label>
+<input [type]="type" [class]="class"  [name]="name" [placeholder]="placeholder"
+    #inputEmail (change)="emitInput(inputEmail.value)" />
+</form>
+

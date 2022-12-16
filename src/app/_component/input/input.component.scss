@@ -1,0 +1,13 @@
+.input{
+  display:flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+input{
+  height:2em;
+  border-radius: 10px;
+}
+label{
+  margin-left: 1em;
+}

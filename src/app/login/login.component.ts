@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { User } from './user';
+
 
 @Component({
   selector: 'app-login',
@@ -6,4 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  
 }
+

@@ -1,24 +1,23 @@
+<div class="container">
+<div class="background">
+  <app-backgroud></app-backgroud>
+</div>
+
 <div class="container1">
 <div class="logo">
   <img src="/assets/images/Group 9.png" alt="logo">
 </div>
-<div class="message">
-  <P><strong><font size="4pt">Nice to see you again</font></strong></P>
+<div class="router">
+<router-outlet></router-outlet>
 </div>
-<form role="form" >
-  <app-login-input param="login"></app-login-input>
-  <app-login-input param="password"></app-login-input>
-  <div class="ligne-checkbox">
-    <div class="checkbox">
-      <input class="apple-switch" type="checkbox"><div class="text">se souvenir de moi</div>
-    </div>
-    <div class="forgot-password">
-      <span routerLink="/forgot-password" >mot de passe oublié</span>
-    </div >
+<div class="footer">
+  <div class="element1">
+    <img class="image" src="/assets/images/Figma.svg" alt="Figma">
+    <div class="uiunicom">@uiunicom</div>
   </div>
-    <button type="sign_in" class="button"><strong>Sign in</strong></button>
-    <img class="image" src="/assets/images/Frame 28981.svg" alt="image-acceuil">
-
-
-</form>
+  <div class="element2">
+    <div>© Perfect Login </div>
+  </div>
+</div>
+</div>
 </div>

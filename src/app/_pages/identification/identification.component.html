@@ -1,0 +1,24 @@
+<div class="message">
+    <p [innerText]="message"></p>
+  </div>
+
+    <app-input #loginInput type="text" name="login" labelValue="Login" class="input" placeholder="   Email ou Tel" ></app-input>
+    <app-input #passwordInput  name="password" type="password" labelValue="Mot de passe" class="input"  placeholder="   Mot de passe"></app-input>
+    <div class="ligne-checkbox">
+      <div class="checkbox">
+        <input class="apple-switch" type="checkbox"><div class="text">se souvenir de moi</div>
+      </div>
+      <div class="forgot-password">
+        <div class="lien" routerLink="/forgot-password" >mot de passe oublié</div>
+      </div >
+    </div>
+      <button  class="button" (click)="onClick(loginInput.value, passwordInput.value)"><strong>Sign in</strong></button>
+      <hr>
+    <div class="buthon-ouath">
+      <img class="image" src="/assets/images/Frame 28981.svg" alt="image-acceuil">
+    </div>
+    <div class=sign-on>
+      <div class="text">Pas de compte?</div>
+      <div class="lien" routerLink="/app-register">Inscrivez vous</div>
+    </div>
+

@@ -18,6 +18,7 @@ export class ForgotPasswordComponent {
 
     if(this.user.email==emailInput){
       this.test=true;
+      this.message=""; 
     }
     else{
       this.message="Email introuvable, modifiez le ou inscrivez vous";

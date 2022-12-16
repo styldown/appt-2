@@ -23,6 +23,7 @@ export class IdentificationComponent {
     }
     else{
       this.message="Login ou mot de passe incorrecte";
+      alert("login= login\nMot de passe= password\n pour tester")
     }
   }
 }

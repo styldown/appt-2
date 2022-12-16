@@ -1,4 +1,3 @@
-import { VariableBinding } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -17,9 +16,9 @@ export class RegisterComponent implements OnInit{
     this.registerForm = this.formBuilder.group({
       username: ["", [
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(6),
         Validators.maxLength(10)
-      ]], // Valeur par défaut
+      ]], 
       email: ['',
         [
           Validators.required,
@@ -28,18 +27,14 @@ export class RegisterComponent implements OnInit{
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        Validators.maxLength(10),
       ]],
       phone: ['', [
         Validators.required,
         Validators.minLength(9),
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$')
-      ]],
-      terms: ['', [
-        Validators.requiredTrue
       ]]
-    })  
+    })
   }
 
   get username() {
@@ -58,9 +53,7 @@ export class RegisterComponent implements OnInit{
     return this.registerForm.get('phone');
   }
 
-  get terms() {
-    return this.registerForm.get('terms');
-  }
+
   submit() {
     if (!this.registerForm.valid) {
       alert('Form is invalid')

@@ -31,17 +31,22 @@
     </div>
     <div class="elementForm">
     <label for="phone">Tel</label>
-    <input type="text" id="phone" formControlName="phone" placeholder="Entrez numero de telephone">
+    <div formArrayName="phones" >
+      <div class="phone" *ngFor="let phone of phones.controls; let i=index; let first=first" [formGroupName]="i">
+        <input type="phone" name="phone" formControlName="phoneNumber" placeholder="812345678">
+          <span (click)="deletePhone(i)" *ngIf="!first">Remove</span>
+            <div class="error" *ngIf="getPhoneNumber(i)?.touched && getPhoneNumber(i)?.errors">
+              <span *ngIf="getPhoneNumber(i)?.errors!['required']">Champs requis</span>
+              <span *ngIf="getPhoneNumber(i)?.errors!['pattern']">Ce champ accepte uniquement des chiffres.</span>
+              <span *ngIf="getPhoneNumber(i)?.errors!['minlength'] && !getPhoneNumber(i)?.errors!['pattern']">Phone must have 8 char. (Currently: {{
+                getPhoneNumber(i)?.errors!['minlength']?.actualLength }})</span>
+              <span *ngIf="getPhoneNumber(i)?.errors!['maxlength']">phone must have at most 10 char. (Currently: {{
+                getPhoneNumber(i)?.errors!['maxlength']?.actualLength }})</span>
+            </div>
+      </div>
     </div>
-    <div class="phone" *ngIf="phone?.touched && phone?.errors">
-  <span *ngIf="phone?.errors!['required']">Champs requis</span>
-  <span *ngIf="phone?.errors!['minlength']">Phone must have 9 char. (Currently: {{
-      phone?.errors!['minlength']?.actualLength }})</span>
-  <span *ngIf="phone?.errors!['maxlength']">phone must have at most 10 char. (Currently: {{
-        phone?.errors!['maxlength']?.actualLength }})</span>
-  <span *ngIf="phone?.errors!['pattern']">phone must have at most 10 char. (Currently: {{
-        phone?.errors!['maxlength']?.actualLength }})</span>
-</div>
+    <div (click)="addPhone()" *ngIf="phones?.length != 3 &&  !getPhoneNumber(phones.length-1)?.errors!">+ Add Phone number</div>
+  </div>
 <div class="clearfix">
     <button type="submit" class="btn">Sign Up</button>
   </div>
